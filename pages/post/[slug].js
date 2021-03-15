@@ -1,16 +1,20 @@
+import { Layout } from '@components';
 import { getPostBySlug } from '@lib/firebase';
 //import { useRouter } from 'next/router';
 import styles from '@styles/post.module.scss';
 import { getFormattedDate } from '@lib/utils';
 
 const PostPage = ({ post }) => (
-    <div className={styles.PostPage}>
-        <img src={post.coverImage} alt={post.coverImageAlt} />
-        <h1>{post.title}</h1>
-        <span>Published {getFormattedDate(post.dateCreated)}</span>
-        <p dangerouslySetInnerHTML={{__html: post.content}}/>
-    </div>
+    <Layout>
+        <div className={styles.PostPage}>
+            <img src={post.coverImage} alt={post.coverImageAlt} />
+            <h1>{post.title}</h1>
+            <span>Published {getFormattedDate(post.dateCreated)}</span>
+            <p dangerouslySetInnerHTML={{__html: post.content}}/>
+        </div>
+    </Layout>
 );
+
 
 export async function getServerSideProps(context) {
     const post = await getPostBySlug(context.query.slug);
