@@ -31,6 +31,8 @@ const HomePage = ({posts}) => (
                             __html: `${post.content.substring(0, 200)}...`,
                         }}
                     />
+                    <a href={`/post/${post.slug}`}>Continue Reading</a>
+
                 </div>
             </article>
         ))}
