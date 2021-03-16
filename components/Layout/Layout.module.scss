@@ -1,10 +1,10 @@
 .Layout {
   nav {
-    padding: 24px;
-    background-color: #1a73e8;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 24px;
+    background-color: #1a73e8;
 
     span {
       a {
@@ -26,11 +26,8 @@
   }
 
   main {
-
     max-width: 700px;
     margin: 0 auto;
     padding: 24px;
-
-
   }
 }
